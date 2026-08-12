@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostafa A. ElNagar - AI & Enterprise Architecture Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Mostafa A. ElNagar - Principal Enterprise Architect & AI Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
+            --bg-color: #0b0f19;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-hover-bg: rgba(30, 41, 59, 0.95);
             --text-color: #f8fafc;
             --text-muted: #94a3b8;
             --primary: #38bdf8;
-            --accent: #818cf8;
-            --border: #334155;
+            --secondary: #818cf8;
+            --accent: #10b981;
+            --border: rgba(255, 255, 255, 0.1);
+            --glow: 0 0 25px rgba(56, 189, 248, 0.15);
         }
 
         * {
@@ -25,104 +28,143 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.12) 0px, transparent 50%);
             color: var(--text-color);
             line-height: 1.6;
             padding: 40px 20px;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--glow);
         }
 
         h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #34d399);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: var(--text-muted);
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
             margin-bottom: 15px;
+        }
+
+        .bio {
+            color: var(--text-muted);
+            max-width: 780px;
+            margin: 0 auto 25px auto;
+            font-size: 1.05rem;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
         }
 
         .contact-links a {
-            color: var(--primary);
+            color: var(--text-color);
             text-decoration: none;
             font-weight: 600;
-            padding: 8px 16px;
-            background: rgba(56, 189, 248, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .contact-links a:hover {
             background: var(--primary);
             color: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
         }
 
         .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 50px 0 25px 0;
             color: var(--text-color);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
             margin-bottom: 50px;
         }
 
         .card {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
             border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 25px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             border-color: var(--primary);
+            box-shadow: var(--glow);
+            background: var(--card-hover-bg);
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--primary);
+            margin-bottom: 12px;
+            width: fit-content;
         }
 
         .card h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 10px;
+            font-size: 1.35rem;
+            color: var(--text-color);
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             flex-grow: 1;
+            line-height: 1.6;
         }
 
         .card-actions {
@@ -133,12 +175,12 @@
         .btn {
             flex: 1;
             text-align: center;
-            padding: 10px;
-            border-radius: 6px;
+            padding: 12px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .btn-primary {
@@ -148,10 +190,11 @@
 
         .btn-primary:hover {
             background-color: #0284c7;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.4);
         }
 
         .btn-secondary {
-            background-color: transparent;
+            background-color: rgba(255, 255, 255, 0.05);
             color: var(--text-color);
             border: 1px solid var(--border);
         }
@@ -160,12 +203,28 @@
             background-color: var(--border);
         }
 
+        .tech-badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tech-badge {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-muted);
+        }
+
         footer {
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 50px;
-            padding-top: 20px;
+            font-size: 0.95rem;
+            margin-top: 60px;
+            padding-top: 30px;
             border-top: 1px solid var(--border);
         }
     </style>
@@ -174,26 +233,110 @@
     <div class="container">
         <header>
             <h1>Mostafa A. ElNagar</h1>
-            <div class="subtitle">AI & Data Science Technical Specialist | Enterprise Solution Architect</div>
-            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 15px auto;">
-                20+ years building enterprise-grade software, multi-cloud platforms (AWS / Azure), and applied AI/ML systems.
+            <div class="subtitle">Principal Enterprise Solutions Architect | AI & Cloud Technical Specialist | Corporate Tech Trainer</div>
+            <p class="bio">
+                20+ years of engineering leadership, enterprise ERP platforms, applied AI/LLM systems, PowerBI analytics, and technical coaching across Kuwait and Egypt.
             </p>
             <div class="contact-links">
-                <a href="mailto:m.nagar@wytsky.com">Email Me</a>
-                <a href="https://www.linkedin.com/in/mostafa-a-elnagar/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/saskw2010" target="_blank">GitHub Profile</a>
+                <a href="mailto:m.nagar@wytsky.com">📧 Email Me</a>
+                <a href="https://www.linkedin.com/in/mostafa-a-elnagar/" target="_blank">🔗 LinkedIn</a>
+                <a href="https://github.com/saskw2010" target="_blank">💻 GitHub Profile</a>
             </div>
         </header>
 
         <main>
-            <h2 class="section-title">📄 Specialized CV Suite</h2>
+            <!-- Pillars Section -->
+            <h2 class="section-title">💡 Technical Specializations & Expertise</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="card-tag">Corporate Leadership</span>
+                    <h3>🎓 Technical Training & Coaching</h3>
+                    <p>Mentoring senior engineering teams, executing hands-on technical labs, and building enterprise curriculum in AI, Cloud, .NET 8, and Data Analytics.</p>
+                </div>
+                <div class="card">
+                    <span class="card-tag">Business Intelligence</span>
+                    <h3>📊 PowerBI & ERP Analytics</h3>
+                    <p>Designing executive PowerBI dashboards (.pbix), DAX metrics, and automated ETL pipelines integrated with ERPs (Healthy Meal ERP, KDC Oil & Gas Operations, POS).</p>
+                </div>
+                <div class="card">
+                    <span class="card-tag">Enterprise Reporting</span>
+                    <h3>🖨️ Stimulsoft Reporting Engine</h3>
+                    <p>Integrating complex PDF/Print report generation engines with Code On Time, ASP.NET WebForms, and SQL Server for enterprise accounting and invoices.</p>
+                </div>
+                <div class="card">
+                    <span class="card-tag">Applied AI & RAG</span>
+                    <h3>🔮 AI, RAG & Vector Databases</h3>
+                    <p>Implementing Local DeepSeek LLMs, LangChain, Rasa NLU, and SQL Server 2025 Native Vector Search (VECTOR_DISTANCE) for enterprise semantic search.</p>
+                </div>
+            </div>
+
+            <!-- Featured Standalone Repositories Gallery -->
+            <h2 class="section-title">🚀 Featured Standalone Projects & Repositories</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="card-tag">AI & Local LLM</span>
+                    <h3>🤖 Gradio DeepSeek AI Chatbot</h3>
+                    <p>Local DeepSeek LLM + LangChain + Gradio Web UI running inside Docker Containers for offline privacy-first AI interaction.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/saskw2010/gradio-deepseek-chatbot" target="_blank" class="btn btn-primary">View GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-tag">Modern Database</span>
+                    <h3>🚀 SQL Server 2025 AI Guide</h3>
+                    <p>Architectural master guide for SQL Server 2025 AI Vector Search, SQL Graph Tables, Blockchain Ledger Tables, and Query Store.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/saskw2010/Modern_SQL_Server_AI_Master_Guide" target="_blank" class="btn btn-primary">View GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-tag">AWS Big Data</span>
+                    <h3>📈 AWS E-Commerce Analytics</h3>
+                    <p>Real-Time Analytical Platform using AWS Kinesis streams, S3 data lake, PySpark ETL jobs, Glue Catalog, and Redshift.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/saskw2010/AWS_Ecommerce_Analytics_Platform" target="_blank" class="btn btn-primary">View GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-tag">Blazor SPA</span>
+                    <h3>🎫 Blazor Enterprise HelpDesk</h3>
+                    <p>Enterprise IT helpdesk, incident ticket management, and SLA tracking system built with Blazor and Radzen Components.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/saskw2010/Blazor_Enterprise_HelpDesk" target="_blank" class="btn btn-primary">View GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-tag">Blazor WASM</span>
+                    <h3>💼 Blazor WASM CRM System</h3>
+                    <p>Single Page Application (SPA) Customer Relationship Management & Sales pipeline tracker built on Blazor WebAssembly.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/saskw2010/Blazor_CRM_Wasm_System" target="_blank" class="btn btn-primary">View GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="card-tag">Oil & Gas Data</span>
+                    <h3>🛢️ KDC Rig Analytics & PowerBI</h3>
+                    <p>Executive PowerBI analytics platform tracking oil rig drilling performance, NPT downtime metrics, and rig move logistics.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/saskw2010/KDC_OilGas_Rig_Operational_Analytics" target="_blank" class="btn btn-secondary">Private Repo 🔒</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV Suite Section -->
+            <h2 class="section-title">📄 Specialized ATS CV Suite</h2>
             <div class="grid">
                 <div class="card">
                     <h3>Master Career Facts</h3>
                     <p>Complete 20-year career timeline capturing all technology domains, enterprise platforms, and engineering milestones.</p>
                     <div class="card-actions">
-                        <a href="./cvs/01-MASTER-CAREER-FACTS-v2.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
-                        <a href="./cvs/01-MASTER-CAREER-FACTS-v2.md" target="_blank" class="btn btn-secondary">Markdown</a>
+                        <a href="./01-MASTER-CAREER-FACTS-v2.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
+                        <a href="./01-MASTER-CAREER-FACTS-v2.md" target="_blank" class="btn btn-secondary">Markdown</a>
                     </div>
                 </div>
 
@@ -201,8 +344,8 @@
                     <h3>Enterprise Solution Architect</h3>
                     <p>Tailored for C#, .NET Core, Blazor, Entity Framework, SAP S/4HANA, Oracle integrations, and microservices architecture.</p>
                     <div class="card-actions">
-                        <a href="./cvs/02-PRINCIPAL-ENTERPRISE-SOLUTION-ARCHITECT-ATS.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
-                        <a href="./cvs/02-PRINCIPAL-ENTERPRISE-SOLUTION-ARCHITECT-ATS.md" target="_blank" class="btn btn-secondary">Markdown</a>
+                        <a href="./02-PRINCIPAL-ENTERPRISE-SOLUTION-ARCHITECT-ATS.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
+                        <a href="./02-PRINCIPAL-ENTERPRISE-SOLUTION-ARCHITECT-ATS.md" target="_blank" class="btn btn-secondary">Markdown</a>
                     </div>
                 </div>
 
@@ -210,8 +353,8 @@
                     <h3>AI & Data Solutions Architect</h3>
                     <p>Focused on LLMs, RAG, Agentic AI, PyTorch, DeepSeek Fine-Tuning, Document Intelligence, and enterprise AI integrations.</p>
                     <div class="card-actions">
-                        <a href="./cvs/03-PRINCIPAL-AI-DATA-SOLUTIONS-ARCHITECT-ATS.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
-                        <a href="./cvs/03-PRINCIPAL-AI-DATA-SOLUTIONS-ARCHITECT-ATS.md" target="_blank" class="btn btn-secondary">Markdown</a>
+                        <a href="./03-PRINCIPAL-AI-DATA-SOLUTIONS-ARCHITECT-ATS.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
+                        <a href="./03-PRINCIPAL-AI-DATA-SOLUTIONS-ARCHITECT-ATS.md" target="_blank" class="btn btn-secondary">Markdown</a>
                     </div>
                 </div>
 
@@ -219,8 +362,8 @@
                     <h3>AI & Cloud Technical Specialist</h3>
                     <p>Multi-Cloud (AWS / Azure) technical specialization, GenAI implementation, and cloud-native software modernization.</p>
                     <div class="card-actions">
-                        <a href="./cvs/04-MICROSOFT-AI-CLOUD-TECHNICAL-SPECIALIST-ATS.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
-                        <a href="./cvs/04-MICROSOFT-AI-CLOUD-TECHNICAL-SPECIALIST-ATS.md" target="_blank" class="btn btn-secondary">Markdown</a>
+                        <a href="./04-MICROSOFT-AI-CLOUD-TECHNICAL-SPECIALIST-ATS.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
+                        <a href="./04-MICROSOFT-AI-CLOUD-TECHNICAL-SPECIALIST-ATS.md" target="_blank" class="btn btn-secondary">Markdown</a>
                     </div>
                 </div>
 
@@ -228,8 +371,8 @@
                     <h3>Engineering & Platform Leadership</h3>
                     <p>Focused on Head of Engineering / VP / CTO roles, product governance, SKY365 platform ownership, and team scale.</p>
                     <div class="card-actions">
-                        <a href="./cvs/05-ENGINEERING-PLATFORM-LEADERSHIP-ATS.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
-                        <a href="./cvs/05-ENGINEERING-PLATFORM-LEADERSHIP-ATS.md" target="_blank" class="btn btn-secondary">Markdown</a>
+                        <a href="./05-ENGINEERING-PLATFORM-LEADERSHIP-ATS.html" target="_blank" class="btn btn-primary">View / Print ATS</a>
+                        <a href="./05-ENGINEERING-PLATFORM-LEADERSHIP-ATS.md" target="_blank" class="btn btn-secondary">Markdown</a>
                     </div>
                 </div>
             </div>
